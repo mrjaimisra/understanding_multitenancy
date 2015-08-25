@@ -1,5 +1,5 @@
 class AddStoreIdToItems < ActiveRecord::Migration
   def change
-    add_reference :items, :store_id, index: true
+    add_reference :items, :store, index: true
   end
 end
