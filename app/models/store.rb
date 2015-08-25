@@ -3,7 +3,7 @@ class Store < ActiveRecord::Base
   validates :url,  presence: true, uniqueness: true
 
   before_validation :generate_url
-  
+
   def generate_url
     self.url = name.parameterize
   end
