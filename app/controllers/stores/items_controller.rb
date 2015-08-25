@@ -6,6 +6,8 @@ class Stores::ItemsController < ApplicationController
 
   def show
     store = Store.find_by(url: params[:store])
-    @item = store.items.find(params[:id])
+    @item = store.items.find_by(id: params[:id])
+
+    redirect_to store_items_path(store: store.url) if @item.nil?
   end
 end
