@@ -1,5 +1,6 @@
 class Stores::ItemsController < ApplicationController
   def index
-    Store.find_by(url: params[:store])
+    store = Store.find_by(url: params[:store])
+    @items = store.items
   end
 end
