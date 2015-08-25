@@ -3,6 +3,7 @@ class Store < ActiveRecord::Base
   validates :url,  presence: true, uniqueness: true
 
   has_many :items
+  has_many :orders
 
   before_validation :generate_url
 
